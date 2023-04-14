@@ -13,7 +13,6 @@ interface Character {
   manufacturer: string;
   cybernetics: string;
   homeworld: string;
-  // add more properties here if needed
 }
 
 const Versus = () => {
@@ -103,12 +102,22 @@ const Versus = () => {
         <button type="submit">Battle!</button>
       </form>
       {characters1Data && characters2Data && (
-        <div className="max-w-[900px]">
-          <Card characters={characters1Data} />
-          <button onClick={() => handleRandomCharacter(1)}>Random</button>
+        <div className="w-full max-w-[900px]">
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
+            onClick={() => handleRandomCharacter(1)}
+          >
+            <Card characters={characters1Data} />
+            Random
+          </button>
           <h1 className="m-5">Versus</h1>
-          <Card characters={characters2Data} />
-          <button onClick={() => handleRandomCharacter(2)}>Random</button>
+          <button
+            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-full"
+            onClick={() => handleRandomCharacter(2)}
+          >
+            <Card characters={characters2Data} />
+            Random
+          </button>
         </div>
       )}
     </div>

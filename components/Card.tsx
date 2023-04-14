@@ -40,7 +40,7 @@ const Card = ({ characters }: Props) => {
           className={`${
             loading ? "hidden" : ""
           } object-cover  rounded-t-lg md:rounded-none md:rounded-l-lg w-64
-          h-64`}
+          h-64 mt-1`}
           onLoad={() => setLoading(false)}
         />
         <div
