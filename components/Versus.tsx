@@ -80,42 +80,66 @@ const Versus = () => {
   };
 
   return (
-    <div className=" flex flex-col  items-center versus-container">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Character 1"
-          value={character1}
-          onChange={(e) => setCharacter1(e.target.value)}
-          className="text-black"
-        />
-        <div>
-          <h3>VS</h3>
+    <div className=" flex flex-col mt-20 items-center">
+      <div className="w-full max-w-md">
+        <div className="mb-4">
+          <form
+            className="bg-gray-900 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            onSubmit={handleSubmit}
+          >
+            <label className="block text-white text-center font-bold mb-2">
+              Character 1
+            </label>
+            <input
+              type="text"
+              placeholder="Search"
+              value={character1}
+              onChange={(e) => setCharacter1(e.target.value)}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+
+            <p className="my-4 items-center text-center font-bold text-white">
+              VS
+            </p>
+
+            <label className="block text-white text-center font-bold mb-2">
+              Character 2
+            </label>
+            <input
+              type="text"
+              placeholder="Search"
+              value={character2}
+              onChange={(e) => setCharacter2(e.target.value)}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+            <button
+              className="bg-[#EEDB00] hover:bg-[#eeda00c8] text-white font-bold py-2 px-4 rounded w-full my-3"
+              type="submit"
+            >
+              Battle!
+            </button>
+          </form>
         </div>
-        <input
-          type="text"
-          placeholder="Character 2"
-          value={character2}
-          onChange={(e) => setCharacter2(e.target.value)}
-          className="text-black"
-        />
-        <button type="submit">Battle!</button>
-      </form>
+      </div>
       {characters1Data && characters2Data && (
         <div className="w-full max-w-[900px]">
+          <Card characters={characters1Data} />
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
             onClick={() => handleRandomCharacter(1)}
           >
-            <Card characters={characters1Data} />
             Random
           </button>
-          <h1 className="m-5">Versus</h1>
+
+          <p className="my-4 items-center text-center font-bold text-white">
+            VS
+          </p>
+
+          <Card characters={characters2Data} />
           <button
             className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-full"
             onClick={() => handleRandomCharacter(2)}
           >
-            <Card characters={characters2Data} />
             Random
           </button>
         </div>
