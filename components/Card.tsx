@@ -14,11 +14,9 @@ type Props = {
     cybernetics: string;
     homeworld: string;
   };
-  hotReload: boolean;
-  setHotReload: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Card = ({ characters, hotReload, setHotReload }: Props) => {
+const Card = ({ characters }: Props) => {
   const [loading, setLoading] = useState(true);
 
   const override: CSSProperties = {
@@ -27,14 +25,9 @@ const Card = ({ characters, hotReload, setHotReload }: Props) => {
     borderColor: "red",
   };
 
-  if (hotReload) {
-    setHotReload(false);
-    window.location.reload();
-  }
-
   return (
     <div className="group py-2">
-      <div className="overflow-hidden flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 m-0">
+      <div className="overflow-hidden flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 m-0">
         <ClipLoader
           color={"#000"}
           loading={loading}
@@ -46,8 +39,8 @@ const Card = ({ characters, hotReload, setHotReload }: Props) => {
           alt={characters.name}
           className={`${
             loading ? "hidden" : ""
-          } object-cover  rounded-t-lg md:h-64 md:w-48 md:rounded-none md:rounded-l-lg max-w-64
-          `}
+          } object-cover  rounded-t-lg md:rounded-none md:rounded-l-lg w-64
+          h-64`}
           onLoad={() => setLoading(false)}
         />
         <div
@@ -72,10 +65,12 @@ const Card = ({ characters, hotReload, setHotReload }: Props) => {
           ) : null}
           <p>
             Homeworld:{" "}
-            {characters.homeworld
-              ? characters.homeworld.charAt(0).toUpperCase() +
-                characters.homeworld.slice(1)
-              : "Unknown"}
+            {Array.isArray(characters.homeworld)
+              ? characters.homeworld
+                  .map((hw) => hw.charAt(0).toUpperCase() + hw.slice(1))
+                  .join(", ")
+              : (characters.homeworld ?? "Unknown").charAt(0).toUpperCase() +
+                (characters.homeworld ?? "Unknown").slice(1)}
           </p>
         </div>
       </div>

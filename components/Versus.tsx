@@ -25,7 +25,6 @@ const Versus = () => {
   const [characters2Data, setCharacters2Data] = useState<Character | null>(
     null
   );
-  const [hotReload, setHotReload] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,9 +64,9 @@ const Versus = () => {
     setCharacters1Data(character1Data);
     setCharacters2Data(character2Data);
   };
-  const handleRandomCharacter = async (cardNumber: number) => {
-    const characters = await fetchCharacters();
-    const randomCharacter =
+  const handleRandomCharacter = async (cardNumber: number): Promise<void> => {
+    const characters: Character[] = await fetchCharacters();
+    const randomCharacter: Character =
       characters[Math.floor(Math.random() * characters.length)];
 
     if (cardNumber === 1) {
@@ -104,19 +103,11 @@ const Versus = () => {
         <button type="submit">Battle!</button>
       </form>
       {characters1Data && characters2Data && (
-        <div className="">
-          <Card
-            characters={characters1Data}
-            hotReload={hotReload}
-            setHotReload={setHotReload}
-          />
+        <div className="max-w-[900px]">
+          <Card characters={characters1Data} />
           <button onClick={() => handleRandomCharacter(1)}>Random</button>
           <h1 className="m-5">Versus</h1>
-          <Card
-            characters={characters2Data}
-            hotReload={hotReload}
-            setHotReload={setHotReload}
-          />
+          <Card characters={characters2Data} />
           <button onClick={() => handleRandomCharacter(2)}>Random</button>
         </div>
       )}
