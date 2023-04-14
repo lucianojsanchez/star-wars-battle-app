@@ -1,7 +1,8 @@
 import Versus from "@/components/Versus";
 import React from "react";
+import fetchCharacters from "@/utils/fetchCharacters";
 
-const page = () => {
+const page = async () => {
   return <Versus />;
 };
 
