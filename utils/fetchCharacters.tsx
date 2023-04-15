@@ -1,4 +1,4 @@
-const fetchCharacters = async () => {
+const fetchCharacters = async (): Promise<any[]> => {
   const response = await fetch(
     "https://akabab.github.io/starwars-api/api/all.json"
   );

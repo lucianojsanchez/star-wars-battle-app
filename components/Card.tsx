@@ -57,8 +57,12 @@ const Card = ({ characters }: Props) => {
               {characters.species.charAt(0).toUpperCase() +
                 characters.species.slice(1)}
             </h3>
-            <p>Weigth: {characters.mass} kg</p>
-            <p>Height: {characters.height} m</p>
+            <p>
+              Weight: {characters.mass ? `${characters.mass} kg` : "Unknown"}
+            </p>
+            <p>
+              Height: {characters.height ? `${characters.height} m` : "Unknown"}
+            </p>
             {characters.manufacturer ? (
               <p>Manufacturer: {characters.manufacturer}</p>
             ) : characters.cybernetics ? (
