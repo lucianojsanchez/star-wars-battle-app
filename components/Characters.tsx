@@ -43,7 +43,7 @@ const Characters = () => {
 
       <div className="grid grid-cols-3 gap-4">
         {filteredCharacters.map((character) => (
-          <Card characters={character} />
+          <Card key={character.name} characters={character} />
         ))}
       </div>
     </>
