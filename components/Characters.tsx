@@ -81,9 +81,6 @@ const Characters = () => {
               "px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:text-gray-400 dark:hover:text-[#EEDB00] font-bold dark:bg-gray-900  dark:hover:bg-gray-700"
             }
             disabledClassName={"opacity-50 pointer-events-none"}
-            breakClassName={"text-gray-500 font-bold"}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={3}
           />
         </>
       )}{" "}
