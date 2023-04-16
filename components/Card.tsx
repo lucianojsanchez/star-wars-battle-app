@@ -25,10 +25,12 @@ const Card = ({ characters }: Props) => {
     borderColor: "red",
     boxShadow:
       "0 0 0 3px rgba(239, 68, 68, 0.5), 0 0 0 6px rgba(239, 68, 68, 0.3)",
+    height: "260px",
+    width: "260px",
   };
 
   return (
-    <div className="group py-2 ">
+    <div className="group py-2">
       <div className="overflow-hidden bg-white border border-gray-200 rounded-lg  shadow-gray-600/20 shadow-xl md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-900  dark:hover:bg-gray-700 m-0 flex flex-col items-center max-h-full py-5 px-4">
         <ClipLoader
           color={"#000"}
