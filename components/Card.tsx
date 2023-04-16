@@ -23,6 +23,8 @@ const Card = ({ characters }: Props) => {
     display: "block",
     margin: "0 auto",
     borderColor: "red",
+    boxShadow:
+      "0 0 0 3px rgba(239, 68, 68, 0.5), 0 0 0 6px rgba(239, 68, 68, 0.3)",
   };
 
   return (
