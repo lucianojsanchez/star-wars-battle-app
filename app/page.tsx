@@ -1,5 +1,4 @@
 import Link from "next/link";
-import bgImage from "@/assets/svg/bgimage.jpg";
 
 const Home = () => {
   return (
