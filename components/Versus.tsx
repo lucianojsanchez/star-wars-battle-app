@@ -80,7 +80,7 @@ const Versus = () => {
   };
 
   return (
-    <div className=" flex flex-col mt-20 items-center">
+    <div className=" flex flex-col mt-20 items-center mx-5 py-1 ">
       <div className="w-full max-w-md">
         <div className="mb-4">
           <form
@@ -113,7 +113,7 @@ const Versus = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
             <button
-              className="bg-[#EEDB00] hover:bg-[#eeda00c8] text-white font-bold py-2 px-4 rounded w-full my-3"
+              className="bg-[#EEDB00] shadow-[#EEDB00]/50 shadow-lg hover:bg-[#eeda00c8] text-black font-bold py-2 px-4 rounded w-full my-3"
               type="submit"
             >
               Battle!
@@ -125,7 +125,7 @@ const Versus = () => {
         <div className="w-full max-w-[900px]">
           <Card characters={characters1Data} />
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
+            className="bg-blue-500 hover:bg-blue-700 shadow-blue-500/50 shadow-lg text-white font-bold py-2 px-4 rounded w-full"
             onClick={() => handleRandomCharacter(1)}
           >
             Random
@@ -137,7 +137,7 @@ const Versus = () => {
 
           <Card characters={characters2Data} />
           <button
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-full"
+            className="bg-red-500 hover:bg-red-700 shadow-red-500/50 shadow-lg text-white font-bold py-2 px-4 rounded w-full mb-10"
             onClick={() => handleRandomCharacter(2)}
           >
             Random

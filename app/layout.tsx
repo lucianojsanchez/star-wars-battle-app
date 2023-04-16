@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="overflow-y-scroll  w-full h-full min-h-screen bg-gradient-to-r from-gray-500 to-gray-700">
+      <body className="overflow-y-scroll w-full h-full min-h-screen bg-gradient-to-r from-blue-900 via-gray-800 to-red-900 ">
         <NavBar />
         {children}
       </body>

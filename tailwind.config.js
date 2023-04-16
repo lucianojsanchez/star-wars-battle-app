@@ -14,6 +14,8 @@ module.exports = {
       },
       fontFamily: {
         "star-wars": ["Star Jedi Outline", "sans-serif"],
+        source: ["Source Sans Pro", "sans-serif"],
+        robotocondensed: ["Roboto Condensed", "sans-serif"],
       },
     },
   },
